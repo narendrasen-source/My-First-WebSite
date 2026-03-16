@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Mini Project</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+padding:0;
+transition:0.3s;
+background:#f2f2f2;
+}
+
+header{
+background:rgb(81, 190, 81);
+color:white;
+padding:20px;
+text-align:center;
+}
+
+button{
+padding:8px 15px;
+margin-top:10px;
+cursor:pointer;
+}
+
+.dark{
+background:#121212;
+color:white;
+}
+
+.container{
+width:80%;
+margin:auto;
+text-align:center;
+padding:40px;
+}
+
+.section{
+margin-top:40px;
+}
+
+form{
+margin-top:20px;
+}
+
+input{
+padding:10px;
+margin:10px;
+width:200px;
+}
+
+#error{
+color:red;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>JavaScript Mini Project</h2>
+<button onclick="darkMode()">Dark Mode</button>
+</header>
+
+<div class="container">
+
+<a href="#form">Go to Form</a>
+
+<div class="section">
+<h3>Welcome</h3>
+<p>This section shows smooth scrolling example.</p>
+</div>
+
+<div class="section" id="form">
+
+<h3>Contact Form</h3>
+
+<form id="formData">
+
+<input type="text" id="name" placeholder="Enter Name"><br>
+
+<input type="email" id="email" placeholder="Enter Email"><br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<p id="error"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function darkMode(){
+document.body.classList.toggle("dark");
+}
+
+document.getElementById("formData").addEventListener("submit", function(e){
+
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+
+if(name=="" || email==""){
+e.preventDefault();
+document.getElementById("error").innerHTML="Please fill all fields";
+}
+
+});
+
+</script>
+
+</body>
+</html>
