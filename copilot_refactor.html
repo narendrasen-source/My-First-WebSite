@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>js project</title>
+
+        <style>
+
+            body{
+                font-family: Arial;
+                margin:0;
+                background: #f4f4f4;
+                transition: 0.3s;
+            }
+
+            header{
+                background: #2e7d32;
+                color: white;
+                text-align: center;
+                padding: 20px;
+
+            }
+
+            .container{
+                width: 90%;
+                max-width: 500px;
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                box-shadow:0 0 10px rgba(0,0,0,0.2);
+                text-align: center;
+
+                margin:50px auto;
+            }
+
+            input{
+                width: 90%;
+                padding: 10px;
+                margin:10px 0;
+                border: 1px solid #ccc;
+                border-radius:5px;
+
+            }
+            button{
+                padding:10px 20px;
+                margin-top: 10px;
+                border: none;
+                background: #2e7d32;
+                color: white;
+                border-radius:5px;
+                cursor:pointer;
+
+            }
+
+            button:hover{
+                background: #2e7d32;
+            }
+
+            .dark{
+                background: #121212;
+                color: #f4f4f4;
+            }
+
+            .dark.container{
+                background: #1e1e1e;
+            }
+
+            #error{
+                color: red;
+                margin-top: 10px;
+
+            }
+
+            #success{
+                color: green;
+                margin-top:10px;
+            }
+
+            html{
+                scroll-behavior: smooth;
+            }
+
+            </style>
+
+            </head>
+            <body>
+
+                <header>
+                    <h2>javaScript project</h2>
+                    <button id="modeBtn">Dark Mode</button>
+                    </header>
+
+                    <div class="container">
+
+<a href="#form">Go to from</a>
+
+<h3>Welcome</h3>
+<p>this is smooth scrolling example</p>
+<div id="form">
+    <h3>contact form</h3>
+    <form id="formdata">
+        <input type="text"id="name" placeholder="Enter Name">
+        <input type="email"id="email"placeholder="Enter Name">
+        <button type="submit">submit</button>
+        </form>
+
+        <p id="error"></p>
+        <p id="success"></p>
+        </div>
+
+        </div>
+        <script>
+            const modeBtn=document.getElementById("modeBtn");
+            const form =document .getElementById("formData")
+            const error=document .getElementById("error")
+            const success=document .getElementById("success")
+
+            modeBtn.addEventListener("click",() =>{
+            document.body.classList.toggle("dark");
+            });
+
+
+            form.addEventListener("submit",(e) =>{
+                e.preventDefault();
+
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+
+                if(!name||!email){
+                    error.textContent="please fill all fields";
+                    success.textContent ="";
+                }
+                else{
+                    error.textContent="";
+                    success.textContent = "form submitted successfully!";
+
+                }
+
+            });
+            </script>
+
+            </body>
+            </html>
+
